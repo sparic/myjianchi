@@ -44,7 +44,7 @@ public class TargetController {
         try {
             Target target = new Target();
             target.setContent(content);
-            target.setSignId(3L);
+            target.setSignId(11L);
             targetService.save(target);
             Signature signature = new Signature();
             signature.setTarget(target);

@@ -263,6 +263,31 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
                     return ctrlManagerLoader($ocLazyLoad, 'user', 'roleCtrl.js')
                 }
             }
+        })
+
+        .state('target', {
+            abstract: true,
+            url: "/target",
+            template: "<div ui-view></div>",
+            resolve: {
+                loadPlugin: managerLoader
+            }
+        })
+
+        .state('target.test', {
+            url: "/test",
+            templateUrl: "assets/mvc/desktop/view/manager.html",
+            controller: 'targetCtrl',
+            data: {
+                pageTitle: '我的测试',
+                subTitle: '测试按钮',
+                datatable: 'assets/mvc/target/view/target_index.html'
+            },
+            resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return ctrlManagerLoader($ocLazyLoad, 'target', 'targetCtrl.js')
+                }
+            }
         });
 }
 angular

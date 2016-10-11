@@ -62,6 +62,13 @@
                     <li ui-sref-active="active"><a ui-sref="user.role">角色管理</a></li>
                 </ul>
             </li>
+
+            <li ng-class="{active: $state.includes('target')}">
+                <a href="target"><i class="fa fa-lg fa-group"></i> <span class="nav-label">我的测试</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('target')}">
+                    <li ui-sref-active="active"><a ui-sref="target.test">测试按钮</a></li>
+                </ul>
+            </li>
         </ul>
 
     </div>
